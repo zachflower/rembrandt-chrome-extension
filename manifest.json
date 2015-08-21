@@ -1,0 +1,25 @@
+{
+ "name": "Rembrandt",
+ "description": "Automatically check Facebook, Twitter, Instagram, and Pinterest for username availability when searching name.com for a domain name.",
+ "homepage_url": "http://zacharyflower.com",
+ "content_scripts": [
+ 	{
+ 		"matches": ["*://www.name.com/domain/search*"],
+ 		"js": ["rembrandt.js"],
+		 "css":["lib/fa/css/font-awesome.min.css"],
+ 		"run_at": "document_end"
+ 	}
+ ],
+ "icons": {
+     "16": "icon-16.png",
+     "48": "icon-48.png",
+     "128": "icon-128.png" },
+ "permissions": [
+     "*://*/*"
+ ],
+"web_accessible_resources":[
+    "lib/fa/fonts/*"
+ ],
+ "version": "0.1",
+ "manifest_version": 2
+}
