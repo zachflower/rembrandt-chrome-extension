@@ -26,19 +26,36 @@ function checkHandleAvailability() {
         var brand = domain_parts[0].trim();
         var xhr = {};
 
-        var networks = ['twitter','facebook','instagram','pinterest'];
+        var networks = [
+          {
+            name:'twitter',
+            url: 'https://www.twitter.com/'
+          },
+          {
+            name:'facebook',
+            url: 'https://www.facebook.com/'
+          },
+          {
+            name:'instagram',
+            url: 'https://www.instagram.com/'
+          },
+          {
+            name:'pinterest',
+            url: 'https://www.pinterest.com/'
+          }
+        ];
 
         networks.map(function(network) {
-          xhr[network] = new XMLHttpRequest();
-          xhr[network].open("GET", 'https://www.' + network +'.com/' + brand, true);
-          xhr[network].onreadystatechange = function() {
-            if (xhr[network].readyState == 4) {
-              if (xhr[network].status == 404) {
-                document.getElementById("rembrandt-" + network).style.color = '#8dc63f';
+          xhr[network.name] = new XMLHttpRequest();
+          xhr[network.name].open("GET", network.url + brand, true);
+          xhr[network.name].onreadystatechange = function() {
+            if (xhr[network.name].readyState == 4) {
+              if (xhr[network.name].status == 404) {
+                document.getElementById("rembrandt-" + network.name).style.color = '#8dc63f';
               }
             }
-          }
-          xhr[network].send();
+          };
+          xhr[network.name].send();
         });
 
       }
