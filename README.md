@@ -1,3 +1,5 @@
+**NOTE: This extension is no longer working or in active development**
+
 [Chrome Extension Page](https://chrome.google.com/webstore/detail/rembrandt/lafmbnbkfddgpghkjomdcpabpjkbaikn)
 
 Finding a usable brand name for your startup or project can be stressful and time consuming.
